@@ -1,0 +1,12 @@
+# 默认配置
+defaults 
+# 覆盖部分defaults配置
+[production]
+last 2 versions
+> 1%
+not IE <= 11 # 不支持IE11
+not IE_Mob <= 11 # 不支持手机IE11
+
+[development]
+last 1 chrome version
+last 1 firefox version
