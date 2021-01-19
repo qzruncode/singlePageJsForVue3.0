@@ -1,30 +1,6 @@
-@width: 10px;
-
-#bundle() {
-    .button {
-        display: block;
-        border: 1px solid black;
-        background-color: grey;
-
-        &:hover {
-            background-color: white;
-        }
-    }
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
 }
-
-div {
-    background-color: red;
-    width: @width;
-
-    #bundle.button();
-}
-
-#colors() {
-    primary: blue;
-    secondary: green;
-}
-
-.button {
-    color: #colors[primary];
-    border: 1px solid #colors[secondary];
+.fade-enter-from, .fade-leave-to {
+  opacity: 0;
 }
