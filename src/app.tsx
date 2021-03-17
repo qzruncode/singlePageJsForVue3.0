@@ -1,4 +1,4 @@
-import { defineComponent, reactive, Transition, computed } from "vue";
+import { defineComponent, reactive, Transition, computed, watchEffect } from "vue";
 import { useRouter } from 'vue-router';
 import { useStore } from 'vuex';
 import { key } from './store'; // store中能用ts提示
@@ -10,6 +10,13 @@ const App = defineComponent({
     const data = reactive({
       activeIndex: '1',
       count: computed(() => store.state.count)
+    });
+
+    watchEffect(cb => {
+      console.log(1);
+      cb(() => {
+        console.log(2);
+      });
     });
 
     const handleSelect = (key:any, keyPath:any) => {
